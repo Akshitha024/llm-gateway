@@ -11,19 +11,9 @@
   <img alt="license" src="https://img.shields.io/badge/license-MIT-lightgrey?style=for-the-badge">
 </p>
 
-> **Production multi-provider LLM gateway: FastAPI + httpx with retry, fallback, ledger, and OpenTelemetry. Benchmarked at 10k requests.**
+> ****
 
 
-
-<p align="center">
-  <img alt="scale" src="https://img.shields.io/badge/scale-10k%20requests-blueviolet?style=for-the-badge">
-  <img alt="success" src="https://img.shields.io/badge/success-100%25-2ecc71?style=for-the-badge">
-  <img alt="latency" src="https://img.shields.io/badge/avg%20latency-2.39ms-ff6b6b?style=for-the-badge">
-  <img alt="mypy" src="https://img.shields.io/badge/mypy-strict-blue?style=for-the-badge">
-  <img alt="license" src="https://img.shields.io/badge/license-MIT-lightgrey?style=for-the-badge">
-</p>
-
-> **Production multi-provider LLM gateway.** FastAPI-served, asyncio-driven router with per-attempt retries, multi-provider fallback (Anthropic / OpenAI / local), a per-request cost ledger, per-tenant aggregation, and an OpenTelemetry-shaped span model. Benchmarked at **10,000 requests** with bounded concurrency and a per-provider 5-8% failure rate injection to exercise the fallback path.
 
 ## The challenge
 
@@ -181,15 +171,37 @@ CITATION.cff, LICENSE, Makefile, .github/workflows/ci.yml
 
 ## License
 
-MIT.
+MIT.## Concept mindmap
+
+```mermaid
+mindmap
+  root((llm))
+    Inputs
+      Fixture
+      Seed
+      Config
+    Core
+      Modules
+      Tests
+      Mypy strict
+    Outputs
+      5 chart families
+      summary json
+      15-page PDF
+    Quality
+      Ruff
+      Coverage
+      CI on push
+```
+
 
 ## Architecture
 
 ```mermaid
 flowchart LR
-    classDef io fill:#3b6fa1,stroke:#1c1c1c,stroke-width:1.5px,color:#fff
-    classDef proc fill:#3b6fa1,stroke:#1c1c1c,stroke-width:1.5px,color:#fff
-    classDef out fill:#5b8d4a,stroke:#1c1c1c,stroke-width:1.5px,color:#fff
+    classDef io fill:#5BC0BE,stroke:#1c1c1c,stroke-width:1.5px,color:#fff
+    classDef proc fill:#0B132B,stroke:#1c1c1c,stroke-width:1.5px,color:#fff
+    classDef out fill:#5BC0BE,stroke:#1c1c1c,stroke-width:1.5px,color:#fff
     A["📥 Inputs<br/>fixtures + configs"]:::io --> B["⚙️ Core pipeline<br/>llm"]:::proc
     B --> C["🧪 Evaluation<br/>5 chart families"]:::proc
     C --> D["📊 Artifacts<br/>summary.json + PNGs"]:::out
@@ -241,20 +253,7 @@ mindmap
 ```
 
 
-## Results gallery
-
-<table>
-  <tr>
-    <td align="center"><strong>Pytest panel</strong><br/><img src="./docs/test_results/pytest_panel.png" width="100%"/></td>
-    <td align="center"><strong>Coverage donut</strong><br/><img src="./docs/test_results/coverage_donut.png" width="100%"/></td>
-  </tr>
-  <tr>
-    <td align="center"><strong>Quality gates</strong><br/><img src="./docs/test_results/quality_gates.png" width="100%"/></td>
-    <td align="center"><strong>Headline metrics</strong><br/><img src="./docs/test_results/metrics_card.png" width="100%"/></td>
-  </tr>
-</table>
-
-### Result charts (6 distinct families, palette: *Default*)
+### Result charts (6 distinct families, palette: *Toll Lanes*)
 
 <table>
   <tr><td align="center"><strong>Cost Over Time</strong><br/><img src="./results/figures/cost_over_time.png" width="100%"/></td><td align="center"><strong>Latency By Provider</strong><br/><img src="./results/figures/latency_by_provider.png" width="100%"/></td></tr>
