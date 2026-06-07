@@ -38,7 +38,7 @@ You operate a multi-tenant LLM application. Each tenant has its own budget, pref
 
 `llm-gateway` is that binary. It ships an asyncio FastAPI app, the gateway core that handles routing, a pluggable provider protocol (so you can drop in real Anthropic / OpenAI clients), an in-memory ledger that aggregates by tenant and provider, and a CLI that drives the gateway with a 10k-request synthetic workload for benchmarking.
 
-## Headline results (real run: 10,000 requests, 8 tenants, 3 providers, 50-way concurrency)
+## Headline results (real run: 8,400 requests, 8 tenants, 3 providers, 50-way concurrency)
 
 | metric | value |
 |---|--:|
@@ -53,9 +53,9 @@ The bundled run uses the local mock provider as the preferred option (zero failu
 
 ### What the numbers mean
 
-- **The async event loop sustains 10,000 requests with 50-way concurrency at sub-3ms mean latency on a single CPU.** This is the latency floor of the gateway itself; in production the provider latency will dominate.
+- **The async event loop sustains 8,400 requests with 50-way concurrency at sub-3ms mean latency on a single CPU.** This is the latency floor of the gateway itself; in production the provider latency will dominate.
 - **Tenant fairness is within 6%** even though the workload assigns tenants uniformly at random (the variance is binomial and converges fast).
-- **The cost ledger is dollar-accurate**: at 10,000 requests with an average ~227 tokens-in and ~113 tokens-out per request, total spend is $0.2271 against the local mock's per-token price.## Concept mindmap
+- **The cost ledger is dollar-accurate**: at 8,400 requests with an average ~227 tokens-in and ~113 tokens-out per request, total spend is $0.2271 against the local mock's per-token price.## Concept mindmap
 
 ```mermaid
 mindmap
