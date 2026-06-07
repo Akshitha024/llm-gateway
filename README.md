@@ -192,7 +192,13 @@ mindmap
       Ruff
       Coverage
       CI on push
-```
+```### Result charts (6 distinct families, palette: *Toll Lanes*)
+
+<table>
+  <tr><td align="center"><strong>Cost Over Time</strong><br/><img src="./results/figures/cost_over_time.png" width="100%"/></td><td align="center"><strong>Latency By Provider</strong><br/><img src="./results/figures/latency_by_provider.png" width="100%"/></td></tr>
+  <tr><td align="center"><strong>Latency Hist</strong><br/><img src="./results/figures/latency_hist.png" width="100%"/></td><td align="center"><strong>Per Provider</strong><br/><img src="./results/figures/per_provider.png" width="100%"/></td></tr>
+  <tr><td align="center"><strong>Per Tenant</strong><br/><img src="./results/figures/per_tenant.png" width="100%"/></td><td align="center"><strong>Success Rate</strong><br/><img src="./results/figures/success_rate.png" width="100%"/></td></tr>
+</table>
 
 
 ## Architecture

@@ -18,7 +18,7 @@ test:
 	uv run pytest -v
 
 bench:
-	uv run lgw bench --out-dir runs/latest --n 10000
+	uv run lgw bench --out-dir runs/latest --n 8400
 
 serve:
 	uv run lgw serve --host 0.0.0.0 --port 8000

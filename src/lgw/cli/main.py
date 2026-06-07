@@ -22,7 +22,7 @@ def info() -> None:
 @app.command()
 def bench(
     out_dir: Path = typer.Option(Path("runs/latest")),
-    n: int = typer.Option(10_000, help="Number of requests to drive"),
+    n: int = typer.Option(8_400, help="Number of requests to drive"),
     seed: int = typer.Option(17),
 ) -> None:
     res = run(out_dir, n_requests=n, seed=seed)
