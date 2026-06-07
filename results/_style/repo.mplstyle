@@ -1,0 +1,21 @@
+# Default palette for this repo. Re-rendered charts pick this up.
+axes.facecolor: #FFFFFF
+figure.facecolor: #FFFFFF
+axes.edgecolor: #1c1c1c
+axes.labelcolor: #1c1c1c
+axes.titlecolor: #1c1c1c
+axes.titleweight: bold
+xtick.color: #1c1c1c
+ytick.color: #1c1c1c
+grid.color: #DDDDDD
+grid.alpha: 0.5
+axes.grid: True
+axes.spines.top: False
+axes.spines.right: False
+axes.prop_cycle: cycler('color', [#3b6fa1, #c25a4f, #5b8d4a, #e6a23c, #7a7a7a, #9b59b6])
+font.family: sans-serif
+font.sans-serif: Helvetica, Arial, DejaVu Sans
+font.size: 10
+figure.titlesize: 14
+figure.titleweight: bold
+image.cmap: viridis

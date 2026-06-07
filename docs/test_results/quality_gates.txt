@@ -1,0 +1,6 @@
+=== ruff check ===
+All checks passed!
+=== ruff format --check ===
+21 files already formatted
+=== mypy ===
+Success: no issues found in 15 source files
